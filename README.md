@@ -10,7 +10,7 @@ SignKit is **easy session keeper** for JWT-based service.
 ## Requirements
 | Platform | Minimum Swift Version | Installation |
 | --- | --- | --- |
-| iOS 13.0+ | 5.5 | [Swift Package Manager](#swift-package-manager) |
+| iOS 11.0+ | 5.5 | [Swift Package Manager](#swift-package-manager) |
 
 ## Installation
 ### Swift Package Manager
@@ -20,4 +20,27 @@ SignKit is **easy session keeper** for JWT-based service.
 dependencies: [
   .package(url: "https://github.com/Mercen-Lee/SignKit.git", .branch("main"))
 ]
+```
+
+## Usage
+- **Login**
+```swift
+Sign.login(
+    id: id,
+    password: password,
+    accessToken: accessToken,
+    refreshToken: refreshToken
+)
+```
+- **Logout**
+```swift
+Sign.logout()
+```
+- **Reissue AccessToken**
+```swift
+Sign.reissue(accessToken)
+```
+- **Check is Logged In**
+```swift
+let isLoggedIn = Sign.isLoggedIn
 ```

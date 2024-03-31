@@ -27,6 +27,10 @@ public struct Sign {
         UserDefaultsStore.set(accessToken, for: "accessToken")
     }
     
+    public static var isLoggedIn: Bool {
+        id != nil
+    }
+    
     public static var id: String? {
         try? UserDefaultsStore.read(key: "id")
     }
