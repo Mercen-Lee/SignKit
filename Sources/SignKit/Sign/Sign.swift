@@ -14,6 +14,15 @@ public struct Sign {
         KeychainStore.set(refreshToken, for: "refreshToken")
     }
     
+    public static func logout() {
+        if let id {
+            KeychainStore.delete(key: id)
+        }
+        UserDefaultsStore.delete(key: "id")
+        UserDefaultsStore.delete(key: "accessToken")
+        KeychainStore.delete(key: "refreshToken")
+    }
+    
     public static func reissue(_ accessToken: String) {
         UserDefaultsStore.set(accessToken, for: "accessToken")
     }
